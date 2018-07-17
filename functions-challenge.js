@@ -1,4 +1,4 @@
-//Author: FirstName LastName
+//Author: Monserrac Franco
 
 /******************************************************************************
                                    sumDouble
@@ -16,7 +16,11 @@ sumDouble(2, 2) → 8
 
 
 function sumDouble(a, b) {
-
+  if(a === b){
+  return (a + b) * 2;
+} else{
+  return a + b;
+}
 }
 
 
@@ -35,7 +39,8 @@ makes10(1, 9) → true
 
 
 function makes10(a, b) {
-
+  if (a === 10 || b === 10 || a + b=10);
+ console.log ('true');
 }
 
 
@@ -55,8 +60,9 @@ parrotTrouble(false, 6) → false
 *******************************************************************************/
 
 function parrotTrouble(talking, hour) {
-
+if (talking & (hour > 7 || 20 < hour)) {
 }
+return false;
 
 
 /******************************************************************************
@@ -98,7 +104,17 @@ caughtSpeeding(65, true) → 0
 *******************************************************************************/
 
 function caughtSpeeding(speed, isBirthday) {
-
+if (is birthday){
+  speed -= 5;
+}
+if (speed <= 60) {
+    return 0;
+} else if (speed >= 61 && sppeed <= 80) {
+    return 1 ;
+} else {
+    return 2;
+  }
+      }
 }
 
 /****************************************************************************

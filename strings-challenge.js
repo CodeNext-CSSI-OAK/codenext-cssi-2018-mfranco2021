@@ -15,7 +15,7 @@ withoutEnd("coding") → "odin"
 *******************************************************************************/
 
 function withoutEnd(str) {
-
+strChartAt(str.length - 1);
 }
 
 // Test this function.
@@ -58,7 +58,7 @@ deFront("away") → "aay"
 *******************************************************************************/
 
 function deFront(str) {
-
+str.charAt(as)
 }
 
 // Test this function.
