@@ -27,7 +27,7 @@ var stonesRemaining, activePlayer, quit;
 *******************************************************************************/
 
 function printGreeting() {
-
+console.log(" Hello Fuckers.");
 }
 
 /******************************************************************************
@@ -48,7 +48,8 @@ function printGreeting() {
 *******************************************************************************/
 
 function setupGame() {
-
+activePlayer = 10
+Math.floor(Math.random() * 2)
 }
 
 /******************************************************************************
@@ -62,7 +63,11 @@ function setupGame() {
 *******************************************************************************/
 
 function printStones() {
-
+let stones = "";
+for(let i = 0; i <= stonesRemaining; i++){
+  stones += "0";
+}
+console.log (stones);
 }
 
 /******************************************************************************
@@ -87,8 +92,28 @@ function printStones() {
 *******************************************************************************/
 
 function removeStones() {
+  let stoneToRemove = 0;
+  while(!(stoneToRemove >= 1 && stoneToRemove <= 3)){
+  if (activePlayer === 0 ){
+    stoneToRemove = Number(readline.question) ("player one, enter 1, 2, or 3? ");
+  } else{
+    stoneToRemove = Number(readline.question) ("player two, enter 1, 2, or 3? ");
+  }
+if(!(stoneToRemove >= 1 && stoneToRemove <= 3))
+    console.log(" Enter 1,2 or 3")
+  } else if (stoneToRemove > stonesRemaining){
+    stoneToRemove = 0;
+    console.log("There are only" + stoneToRemove + "stones Remaining!");
 
-}
+  }
+  }
+  stoneToRemove -= stoneToRemove
+  if(activePlayer === 0){
+  activePlayer = 1;
+  }else{
+      activePlayer = 0;
+    }
+  }
 
 /******************************************************************************
                                   processResult()
@@ -105,7 +130,16 @@ function removeStones() {
 *******************************************************************************/
 
 function processResult() {
-
+console.log ("")
+if (activePlayer === 0){
+  console.log ("player one wins")
+} else {
+  console.log("player two wins")
+}
+console.log();
+let keepPlaying = readline.question("Player again?(yes or no");
+if(keepPlaying !== "yes" && keepPlaying !== "y"){
+  quit = true;
 }
 
 /******************************************************************************
@@ -126,7 +160,17 @@ function processResult() {
 *******************************************************************************/
 
 function run() {
-
+printGreeting();
+quiet = false;
+while(!quiet){
+  setupGame();
+while(stonesToRemove > 0){
+    printStones();
+    removeStones();
+  }
+    proccessResult();
+}
+   console.log("Thanks for playing")
 }
 
 // Run the program!

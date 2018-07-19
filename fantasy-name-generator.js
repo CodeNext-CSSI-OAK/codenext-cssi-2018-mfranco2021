@@ -13,7 +13,7 @@ var firstName, lastName, momMaidenName, cityBorn, dreamCar, street, fantasyName;
 *******************************************************************************/
 
 function getNewFirstName() {
-
+  return firstName.substring(0,3) + lastName.substring(0,2).toLowerCase();
 }
 
 /******************************************************************************
@@ -25,7 +25,7 @@ function getNewFirstName() {
 *******************************************************************************/
 
 function getNewLastName() {
-
+  return momMaidenName.substring(0,2) + cityBorn.substring(0,3).toLowerCase();
 }
 
 /******************************************************************************
@@ -36,7 +36,7 @@ function getNewLastName() {
 *******************************************************************************/
 
 function getTitle() {
-
+  return lastName.charAt(lastName.length -1) + lastName.charAt(lastName.length - 2) + lastName.charAt(lastName.length - 3 ) + dreamCar.toLowerCase();
 }
 
 /******************************************************************************
@@ -61,8 +61,15 @@ function getHonorific() {
 *******************************************************************************/
 
 function run() {
+    firstName = readline.question("Whats you first name.");
+    lastName = readline.question ("What is your last name.");
+    momMaidenName = readline.question ("What is you mom maiden name.");
+    cityBorn = readline.question ("What city were you born in.");
+    dreamCar = readline.question("What is your dream car.");
+    street = readline.question("What street did you grow uo in.")
 
-}
+    console.log ("All hail," + getNewFirstName() + " " + getNewLastName() + ", " + getTitle() + " of " + street);
+}  
 
 // Run the program!
 run();
